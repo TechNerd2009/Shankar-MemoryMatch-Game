@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <div class="header-content">
+                <h1>Memory Match</h1>
+                <button class="info-btn" id="info-btn">ℹ️</button>
+            </div>
+            <div class="difficulty-selector" id="difficulty-selector">
+                <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+                <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+            </div>
+            <div class="game-info" id="game-info">
+                <div class="moves">Moves: <span id="moves-count">0</span></div>
+                <div class="timer">Time: <span id="time">00:00</span></div>
+                <div class="sound-controls">
+                    <button class="sound-btn" id="bgm-toggle" title="Toggle Background Music">
+                        <span class="sound-icon">🎵</span>
+                    </button>
+                    <button class="sound-btn" id="sfx-toggle" title="Toggle Sound Effects">
+                        <span class="sound-icon">🔊</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="game-board" id="game-board">
+            <!-- Cards will be dynamically generated here -->
+        </div>
+
+        <div class="controls">
+            <button id="reset-game" class="reset-btn">Reset Game</button>
+            <button id="start-game" class="start-btn">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Info Popup -->
+    <div class="info-popup" id="info-popup">
+        <div class="info-content">
+            <h2>How to Play 🎮</h2>
+            <div class="info-section">
+                <h3>Game Modes 🎯</h3>
+                <ul>
+                    <li><span class="emoji">🎨</span> Easy: Cards have matching colors on the back</li>
+                    <li><span class="emoji">🎭</span> Medium: Cards have matching colors on the front</li>
+                    <li><span class="emoji">🧠</span> Hard: No color hints, pure memory challenge</li>
+                </ul>
+            </div>
+            <div class="info-section">
+                <h3>How to Play ⚡</h3>
+                <ul>
+                    <li><span class="emoji">🔄</span> Click cards to flip them</li>
+                    <li><span class="emoji">👥</span> Match pairs of cards</li>
+                    <li><span class="emoji">⏱️</span> Track your moves and time</li>
+                    <li><span class="emoji">🎉</span> Win by matching all pairs!</li>
+                </ul>
+            </div>
+            <div class="info-section">
+                <h3>Features ✨</h3>
+                <ul>
+                    <li><span class="emoji">🎵</span> Sound effects for better feedback</li>
+                    <li><span class="emoji">🎨</span> Beautiful animations and transitions</li>
+                    <li><span class="emoji">🏆</span> Track your performance</li>
+                    <li><span class="emoji">🎯</span> Three difficulty levels</li>
+                </ul>
+            </div>
+            <button class="close-info">Got it! 👍</button>
+        </div>
+    </div>
+
+    <!-- Win Popup -->
+    <div class="win-popup" id="win-popup">
+        <div class="win-content">
+            <h2>Congratulations! 🎉</h2>
+            <p>You won in <span id="win-moves">0</span> moves and <span id="win-time">00:00</span>!</p>
+            <button id="play-again">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Audio elements for sound effects -->
+    <audio id="match-sound" src="audio/match.mp3" preload="auto"></audio>
+    <audio id="mismatch-sound" src="audio/mismatch.mp3" preload="auto"></audio>
+    <audio id="win-sound" src="audio/win.mp3" preload="auto"></audio>
+    <audio id="bgm" src="audio/background.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html> 
